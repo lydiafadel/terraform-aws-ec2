@@ -52,9 +52,10 @@ resource "aws_instance" "app_server"{
   }
 }
 
-# Create a workspace
-resource "" "" {
-  # ...
+resource "tfe_workspace" "test" {
+  name         = "my-workspace"
+  organization = tfe_organization.test-Hashi-sami
+  tag_names    = ["test", "app"]
 }
 
 resource "tfe_team" "test" {
