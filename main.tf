@@ -14,19 +14,6 @@ terraform {
   required_version = ">= 1.2.0"
   } 
 
-  terraform {
-  required_providers {
-    tfe = {
-      version = "~> 0.35.0"
-    }
-  }
-}
-
-provider "tfe" {
- hostname = var.hostname
- token    = var.token
-}
-
 
 provider "aws" {
   region  = "eu-west-3"
@@ -52,19 +39,4 @@ resource "aws_instance" "app_server"{
   }
 }
 
-resource "tfe_workspace" "test" {
-  name         = "my-workspace"
-  organization = tfe_organization.test-Hashi-sami
-  tag_names    = ["test", "app"]
-}
 
-resource "tfe_team" "test" {
-  name         = "owners"
-  organization = "Hashi-sami"
-}
-
-resource "tfe_team_access" "test" {
-  access       = "admin"  
-  team_id      = tfe_team.test.id
-  workspace_id = tfe_workspace.test.id
-}
