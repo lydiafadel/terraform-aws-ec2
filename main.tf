@@ -30,9 +30,9 @@ resource "aws_iam_openid_connect_provider" "tfc_provider" {
 }
 
 resource "aws_instance" "app_server"{
-  ami           = "ami-02d0b1ffa5f16402d"
+  ami           = "ami-0cd8ad123effa531a"
   instance_type = "t2.micro"
-  subnet_id     = "subnet-0d77553dc9abeae0e"
+  subnet_id     = "subnet-000e26b9159c7999f"
 
   tags = {
     Name = "Myapp"
