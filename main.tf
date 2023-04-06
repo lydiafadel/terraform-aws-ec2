@@ -35,7 +35,7 @@ resource "aws_instance" "app_server"{
   subnet_id     = "subnet-000e26b9159c7999f"
 
   tags = {
-    Name = "Myapp"
+    Name = "Monapp"
   }
 }
 
