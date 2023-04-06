@@ -1,8 +1,9 @@
 terraform {
   cloud {
-    organization = "Hashi-sami"
+    organization = "Demo-Lydia"
     workspaces {
-      name = "My-existing-infra"
+      name = "terraform-aws-ec2"
+
     }
   }
   required_providers {
@@ -31,7 +32,7 @@ resource "aws_iam_openid_connect_provider" "tfc_provider" {
 
 resource "aws_instance" "app_server"{
   ami           = "ami-0cd8ad123effa531a"
-  instance_type = "t2.micro"
+  instance_type = "t2.small"
   subnet_id     = "subnet-000e26b9159c7999f"
 
   tags = {
