@@ -32,7 +32,7 @@ resource "aws_iam_openid_connect_provider" "tfc_provider" {
 
 resource "aws_instance" "app_server"{
   ami           = "ami-0cd8ad123effa531a"
-  instance_type = "t2.nano"
+  instance_type = "t2.micro"
   subnet_id     = "subnet-000e26b9159c7999f"
 
   tags = {
